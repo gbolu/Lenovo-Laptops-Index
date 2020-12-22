@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/lenovo_laptop_yoga_family_hp_banner_bg_1920x538_v1"
+        android:duration="4000" />
+
+    <item
+        android:drawable="@drawable/lenovo_gaming_legion_family_homepage_3__1_"
+        android:duration="4000" />
+
+    <item
+        android:drawable="@drawable/we_hp_banner_x1_fold_mob"
+        android:duration="4000" />
+
+</animation-list>
