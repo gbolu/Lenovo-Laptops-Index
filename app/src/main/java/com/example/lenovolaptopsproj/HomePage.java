@@ -5,8 +5,10 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -26,7 +28,20 @@ public class HomePage extends AppCompatActivity {
 
         addServices();
 
-        ImageView lenovo ;
+        ImageView yoga = findViewById(R.id.yogalogo);
+        ImageView lenovo = findViewById(R.id.lenovologo);
+        ImageView thinkbook = findViewById(R.id.thinkBooklogo);
+        ImageView thinkpad = findViewById(R.id.thinklogo);
+        ImageView legion = findViewById(R.id.legionlogo);
+        ImageView ideapad = findViewById(R.id.ideapadlogo);
+
+        yoga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent yoga = new Intent(getBaseContext(), YogaPage.class);
+                startActivity(yoga);
+            }
+        });
     }
 
     public void addServices() {

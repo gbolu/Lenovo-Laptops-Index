@@ -88,7 +88,7 @@
                     app:srcCompat="@drawable/unnamed__4_" />
 
                 <ImageView
-                    android:id="@+id/ideapad"
+                    android:id="@+id/ideapadlogo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
