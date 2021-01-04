@@ -1,0 +1,98 @@
+{
+  "laptops": [
+    {
+      "name": "X1 Carbon Gen 7",
+      "brand": "ThinkPad",
+      "subBrand": "X1",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": false
+    },
+    {
+      "name": "X1 Carbon Gen 8",
+      "brand": "ThinkPad",
+      "subBrand": "X1",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": false
+    },
+    {
+      "name": "X1 Extreme Gen 2",
+      "brand": "ThinkPad",
+      "subBrand": "X1",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": false
+    },{
+      "name": "X1 Extreme Gen 3",
+      "brand": "ThinkPad",
+      "subBrand": "X1",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": false
+    },{
+      "name": "X1 Fold",
+      "brand": "ThinkPad",
+      "subBrand": "X1",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": false
+    },{
+      "name": "X1 Nano",
+      "brand": "ThinkPad",
+      "subBrand": "X1",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": false
+    },{
+      "name": "X1 Yoga Gen 4",
+      "brand": "ThinkPad",
+      "subBrand": "X1",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": false
+    },{
+      "name": "X1 Yoga Gen 5",
+      "brand": "ThinkPad",
+      "subBrand": "X1",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": false
+    },{
+      "name": "X13 AMD/Intel",
+      "brand": "ThinkPad",
+      "subBrand": "X",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": true
+    },{
+      "name": "X13 Yoga",
+      "brand": "ThinkPad",
+      "subBrand": "X",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": false
+    },{
+      "name": "X280",
+      "brand": "ThinkPad",
+      "subBrand": "X",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": false
+    },{
+      "name": "X380 Yoga",
+      "brand": "ThinkPad",
+      "subBrand": "X",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": false
+    },{
+      "name": "X390",
+      "brand": "ThinkPad",
+      "subBrand": "X",
+      "description": "",
+      "imageRef": "lenovo_white",
+      "hasMultipleProcessors": false
+    }
+  ]
+}

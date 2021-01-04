@@ -6,6 +6,15 @@ public class ProductModel {
     String laptop_imageRef;
     String laptop_brand;
     String laptop_description;
+    Boolean hasMultipleProcessors;
+
+    public Boolean getHasMultipleProcessors() {
+        return hasMultipleProcessors;
+    }
+
+    public void setHasMultipleProcessors(Boolean hasMultipleProcessors) {
+        this.hasMultipleProcessors = hasMultipleProcessors;
+    }
 
     public String getLaptop_brand() {
         return laptop_brand;

@@ -4,17 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomePage">
+    android:background="#00FFFFFF"
+    tools:context=".Pages.HomePage">
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/search_list_view"
+                android:layout_width="360dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="-250dp" />
 
             <TextView
                 android:id="@+id/textView"
@@ -22,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="300dp"
                 android:fontFamily="@font/playfair_display_bold"
-                android:text="Browse By Brand"
+                android:text="@string/browse_by_brand"
                 android:textAlignment="center"
                 android:textColor="#E1140A"
                 android:textSize="30sp" />
@@ -106,37 +122,54 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:layout_marginBottom="60dp" />
+                    android:layout_marginBottom="30dp" />
 
             </LinearLayout>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="413dp"
+        android:layout_width="0dp"
         android:layout_height="59dp"
-        android:layout_marginBottom="579dp"
         android:background="#E1140A"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="@+id/nestedScrollView">
 
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="350dp"
-            android:layout_height="41dp"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="36dp"
-            android:background="#F8F5F5"
-            android:queryHint="Search"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.272"
+        <!--        <SearchView-->
+        <!--            android:id="@+id/searchView"-->
+        <!--            android:layout_width="350dp"-->
+        <!--            android:layout_height="41dp"-->
+        <!--            android:layout_marginStart="31dp"-->
+        <!--            android:layout_marginTop="8dp"-->
+        <!--            android:layout_marginEnd="36dp"-->
+        <!--            android:background="#F8F5F5"-->
+        <!--            android:queryHint="Search Lenovo Laptops"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.272"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <ImageView
+            android:id="@+id/lenovoLogoActionBar"
+            android:layout_width="127dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/lenovo_white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="167dp"
+            android:gravity="right"
+            android:layoutDirection="rtl"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
