@@ -1,26 +1,26 @@
 package com.example.lenovolaptopsproj.Pages;
 
+import android.app.SearchManager;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.SearchManager;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
 import com.example.lenovolaptopsproj.Adapters.SearchAdapter;
 import com.example.lenovolaptopsproj.Controllers.ProductController;
 import com.example.lenovolaptopsproj.Models.ProductModel;
 import com.example.lenovolaptopsproj.R;
+
 import java.util.ArrayList;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchPage extends AppCompatActivity {
     ArrayList<ProductModel> searchResults;
     RecyclerView searchResultsView;
     SearchAdapter searchAdapter;

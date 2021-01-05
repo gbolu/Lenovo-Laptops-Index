@@ -8,7 +8,7 @@ import android.os.Bundle;
 import com.example.lenovolaptopsproj.Controllers.ProductController;
 import com.example.lenovolaptopsproj.R;
 
-public class SplashScreen extends AppCompatActivity {
+public class SplashPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

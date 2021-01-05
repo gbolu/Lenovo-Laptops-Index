@@ -1,0 +1,47 @@
+{
+  "brands": [
+    {
+      "name": "Yoga",
+      "subBrands": [
+        "Duet", "2-in-1", "Slim"
+      ],
+      "details": "Combining product adaptability with innovative engineering, these 2-in-1 laptops and Ultrabooks™ feature high performance, impressive design, and four different usage modes for the ultimate in mobile flexibility.",
+      "videoRef": "yoga"
+    },{
+      "name": "Lenovo",
+      "subBrands": [
+        "N", "V"
+      ],
+      "details": "Combining product adaptability with innovative engineering, these 2-in-1 laptops and Ultrabooks™ feature high performance, impressive design, and four different usage modes for the ultimate in mobile flexibility.",
+      "videoRef": "yoga"
+    },{
+      "name": "ThinkBook",
+      "subBrands": [
+        "ThinkBook"
+      ],
+      "details": "Combining product adaptability with innovative engineering, these 2-in-1 laptops and Ultrabooks™ feature high performance, impressive design, and four different usage modes for the ultimate in mobile flexibility.",
+      "videoRef": "yoga"
+    },{
+      "name": "ThinkPad",
+      "subBrands": [
+        "X", "X1", "T", "P", "E", "A", "11e", "L"
+      ],
+      "details": "Combining product adaptability with innovative engineering, these 2-in-1 laptops and Ultrabooks™ feature high performance, impressive design, and four different usage modes for the ultimate in mobile flexibility.",
+      "videoRef": "thinkpad"
+    },{
+      "name": "Legion",
+      "subBrands": [
+        "7", "5", "Y"
+      ],
+      "details": "Combining product adaptability with innovative engineering, these 2-in-1 laptops and Ultrabooks™ feature high performance, impressive design, and four different usage modes for the ultimate in mobile flexibility.",
+      "videoRef": "yoga"
+    },{
+      "name": "Ideapad",
+      "subBrands": [
+        "5", "1", "3", "S", "Gaming L Series", "Flex", "C", "Duet Series", "D", "Creator", "L"
+      ],
+      "details": "Combining product adaptability with innovative engineering, these 2-in-1 laptops and Ultrabooks™ feature high performance, impressive design, and four different usage modes for the ultimate in mobile flexibility.",
+      "videoRef": "yoga"
+    }
+  ]
+}
