@@ -18,13 +18,9 @@ import static com.example.lenovolaptopsproj.Util.Helpers.toJSONString;
 
 public final class ProductController
 {
-    static ArrayList<ProductModel> allProducts = new ArrayList<>();
-    
-    public static ArrayList<ProductModel> getAllProducts() {
-        return allProducts;
-    }
+    public static ArrayList<ProductModel> allProducts = new ArrayList<>();
 
-    public final ProductModel getProduct(int productIndex)
+    public static ProductModel getProduct(int productIndex)
     {
         return allProducts.get(productIndex);
     }
@@ -49,6 +45,20 @@ public final class ProductController
                 temp.setLaptop_sub_brand(product.getString("subBrand"));
                 temp.setLaptop_description(product.getString("description"));
                 temp.setLaptop_imageRef(product.getString("imageRef"));
+
+                JSONArray productSpecs = product.getJSONArray("specs");
+                ArrayList<ArrayList<String>> specs = new ArrayList<>();
+
+                for (int i = 0; i < productSpecs.length(); i++) {
+                    ArrayList<String> tempArr = new ArrayList<>();
+                    JSONArray jsonArray = productSpecs.getJSONArray(i);
+                    for (int j = 0; j < jsonArray.length(); j++) {
+                        tempArr.add(jsonArray.getString(j));
+                    }
+                    specs.add(tempArr);
+                }
+                temp.setSpecs(specs);
+
                 temp.setHasMultipleProcessors(product.getBoolean("hasMultipleProcessors"));
 
                 allProducts.add(temp);
@@ -68,6 +78,7 @@ public final class ProductController
             };
         }
     }
+
 
     //  search list of products for items
     public static ArrayList<ProductModel> searchProducts(String searchString)
@@ -151,7 +162,7 @@ public final class ProductController
         {
             ProductModel tempProduct = allProducts.get(index);
 
-            if(tempProduct.getLaptop_sub_brand().contains(searchString))
+            if(tempProduct.getLaptop_sub_brand().equalsIgnoreCase(searchString))
             {
                 searchResults.add(tempProduct);
             }

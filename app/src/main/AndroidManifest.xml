@@ -5,12 +5,15 @@
     <application
         android:name=".Util.AppStart"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/lenovo_white"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/lenovo_white"
         android:supportsRtl="true"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Pages.BrandPage"></activity>
+        <activity android:name=".Pages.LaptopPage"></activity>
+        <activity android:name=".Pages.BrandPage" />
 
         <meta-data
             android:name="android.app.default_searchable"

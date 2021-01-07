@@ -3,4 +3,7 @@
     <string name="browse_by_brand">Browse By Brand</string>
     <string name="search_hint">Search laptops...</string>
     <string name="search_results">Product Search Results</string>
+    <string name="laptop_image">Laptop Image</string>
+    <string name="similar_laptops_text">Similar Laptops:</string>
+    <string name="laptops_specs">Laptops Specs:</string>
 </resources>

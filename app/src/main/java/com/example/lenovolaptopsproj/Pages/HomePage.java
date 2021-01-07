@@ -1,25 +1,23 @@
 package com.example.lenovolaptopsproj.Pages;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SearchView;
 
-import com.example.lenovolaptopsproj.R;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.lenovolaptopsproj.Adapters.LaptopAdapter;
 import com.example.lenovolaptopsproj.Controllers.ProductController;
 import com.example.lenovolaptopsproj.Models.ProductModel;
+import com.example.lenovolaptopsproj.R;
 
 import java.util.ArrayList;
 
-public class HomePage extends AppCompatActivity {
+public class HomePage extends SearchableActivity {
     ArrayList<ProductModel> products;
     RecyclerView recyclerView1;
     SearchView searchBtn;
@@ -42,41 +40,24 @@ public class HomePage extends AppCompatActivity {
 
         products = ProductController.getRandomProducts(6);
 
-        searchBtn.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                Intent n_int = new Intent(getApplicationContext(), SearchPage.class);
-                n_int.setAction(Intent.ACTION_SEARCH);
-                n_int.putExtra(SearchManager.QUERY, s);
-                startActivity(n_int);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                return false;
-            }
-        });
+        searchBtn.setOnQueryTextListener(getNewListener());
 
         recyclerView1.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView1.setItemAnimator(new DefaultItemAnimator());
 
         LaptopAdapter adapter = new LaptopAdapter(getApplicationContext(), products);
         recyclerView1.setAdapter(adapter);
+        recyclerView1.setFocusable(false);
 
         thinkPad = findViewById(R.id.thinkPadlogo);
         thinkBook = findViewById(R.id.thinkBooklogo);
         ideapad = findViewById(R.id.ideapad);
-        legion = findViewById(R.id.legionlogo);
         lenovo = findViewById(R.id.lenovologo);
-        yoga = findViewById(R.id.yogalogo);
 
         ArrayList<View> views = new ArrayList<>();
-        views.add(yoga);
         views.add(lenovo);
         views.add(thinkBook);
         views.add(thinkPad);
-        views.add(legion);
         views.add(ideapad);
 
 

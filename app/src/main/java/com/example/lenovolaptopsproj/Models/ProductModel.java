@@ -1,5 +1,7 @@
 package com.example.lenovolaptopsproj.Models;
 
+import java.util.ArrayList;
+
 public class ProductModel {
     String laptop_sub_brand;
     String laptop_name;
@@ -7,6 +9,17 @@ public class ProductModel {
     String laptop_brand;
     String laptop_description;
     Boolean hasMultipleProcessors;
+    ArrayList<ArrayList<String>> specs;
+
+    public ProductModel() { }
+
+    public ArrayList<ArrayList<String>> getSpecs() {
+        return specs;
+    }
+
+    public void setSpecs(ArrayList<ArrayList<String>> specs) {
+        this.specs = specs;
+    }
 
     public Boolean getHasMultipleProcessors() {
         return hasMultipleProcessors;

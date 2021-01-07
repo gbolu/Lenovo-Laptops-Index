@@ -40,6 +40,7 @@ public class SearchPage extends AppCompatActivity {
         searchResultsView.setAdapter(searchAdapter);
         searchResultsView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         searchResultsView.setItemAnimator(new DefaultItemAnimator());
+        searchResultsView.setFocusable(false);
 
         // Get the intent, verify the action and get the query
         handleIntent(getIntent());

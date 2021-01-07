@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,8 +10,8 @@
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,55 +22,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <ListView
-                android:id="@+id/search_list_view"
-                android:layout_width="360dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="64dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginBottom="-250dp" />
-
-            <TextView
-                android:id="@+id/textView"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="300dp"
-                android:fontFamily="@font/playfair_display_bold"
-                android:text="@string/browse_by_brand"
-                android:textAlignment="center"
-                android:textColor="#E1140A"
-                android:textSize="30sp" />
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:text="@string/browse_by_brand"
+                    android:textAlignment="center"
+                    android:textColor="#E1140A"
+                    android:textSize="30sp" />
+            </LinearLayout>
 
             <LinearLayout
-                android:layout_width="412dp"
+                android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginTop="30dp"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/yogalogo"
-                    android:layout_width="194dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/unnamed__3_" />
-
-                <ImageView
                     android:id="@+id/lenovologo"
-                    android:layout_width="179dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/unnamed__1_" />
 
+                <ImageView
+                    android:id="@+id/ideapad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/unnamed__2_" />
+
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="412dp"
+                android:layout_width="match_parent"
                 android:layout_height="44dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginTop="30dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -85,31 +78,6 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/unnamedtest2" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="412dp"
-                android:layout_height="44dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="1dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/legionlogo"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/unnamed__4_" />
-
-                <ImageView
-                    android:id="@+id/ideapad"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/unnamed__2_" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -138,20 +106,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/nestedScrollView">
 
-        <!--        <SearchView-->
-        <!--            android:id="@+id/searchView"-->
-        <!--            android:layout_width="350dp"-->
-        <!--            android:layout_height="41dp"-->
-        <!--            android:layout_marginStart="31dp"-->
-        <!--            android:layout_marginTop="8dp"-->
-        <!--            android:layout_marginEnd="36dp"-->
-        <!--            android:background="#F8F5F5"-->
-        <!--            android:queryHint="Search Lenovo Laptops"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintHorizontal_bias="0.272"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent" />-->
-
         <ImageView
             android:id="@+id/lenovoLogoActionBar"
             android:layout_width="127dp"
@@ -159,17 +113,19 @@
             android:layout_marginStart="24dp"
             android:src="@drawable/lenovo_white"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <SearchView
             android:id="@+id/search"
-            android:layout_width="220dp"
+            android:layout_width="180dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="167dp"
-            android:gravity="right"
+            android:gravity="end"
             android:layoutDirection="rtl"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

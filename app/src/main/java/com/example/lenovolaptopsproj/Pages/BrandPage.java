@@ -9,12 +9,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.MediaController;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,7 +29,7 @@ import com.example.lenovolaptopsproj.R;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class BrandPage extends AppCompatActivity {
+public class BrandPage extends SearchableActivity {
     private BrandModel brandModel;
     private RecyclerView brandLaptopsView;
     private ArrayList<ProductModel> brandLaptops;
@@ -46,6 +46,8 @@ public class BrandPage extends AppCompatActivity {
         int brandID = Objects.requireNonNull(getIntent().getExtras()).getInt("brandID");
         brandModel = BrandController.getBrand(brandID);
         brandLaptops = ProductController.searchProducts(brandModel.getBrandName());
+        SearchView searchView = findViewById(R.id.searchView);
+        searchView.setOnQueryTextListener(getNewListener());
 
         TextView brandName = findViewById(R.id.brandName);
         brandName.setText(brandModel.getBrandName());
@@ -68,6 +70,7 @@ public class BrandPage extends AppCompatActivity {
 
         brandAdapter = new LaptopAdapter(getApplicationContext(), adapterLaptops);
         brandLaptopsView.setAdapter(brandAdapter);
+        brandLaptopsView.setFocusable(false);
     }
     
     private void setVideoView()
@@ -100,21 +103,22 @@ public class BrandPage extends AppCompatActivity {
     
     private void setSpinner()
     {
-        Spinner brandSpinner = findViewById(R.id.spinner);
+        final Spinner brandSpinner = findViewById(R.id.spinner);
 
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item,
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item,
                 brandModel.getSubBrands());
-
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // Apply the adapter to the spinner
         brandSpinner.setAdapter(adapter);
 
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         brandSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                adapterView.setSelected(true);
                 String selectedSubBrand = adapterView.getSelectedItem().toString();
                 Log.i("Selected Sub Brand:", selectedSubBrand);
                 int index = 0;
@@ -125,7 +129,8 @@ public class BrandPage extends AppCompatActivity {
                         ArrayList<ProductModel> selectedBrandLaptops = ProductController.searchProductsBySubBrand(selectedSubBrand);
                         adapterLaptops.clear();
                         adapterLaptops.addAll(selectedBrandLaptops);
-                        Objects.requireNonNull(brandLaptopsView.getAdapter()).notifyDataSetChanged();
+                        brandAdapter.notifyDataSetChanged();
+                        adapter.notifyDataSetChanged();
                         break;
                     }
                     index++;
