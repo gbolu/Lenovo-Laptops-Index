@@ -1,6 +1,7 @@
 package com.example.lenovolaptopsproj.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 import android.view.LayoutInflater;
@@ -12,10 +13,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lenovolaptopsproj.Pages.LaptopPage;
 import com.example.lenovolaptopsproj.R;
 import com.example.lenovolaptopsproj.Models.ProductModel;
 
 import java.util.ArrayList;
+
+import static com.example.lenovolaptopsproj.Controllers.ProductController.allProducts;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.viewHolder> {
 
@@ -36,7 +40,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.viewHolder
 
     @Override
     public void onBindViewHolder(SearchAdapter.viewHolder holder, int position) {
-        ProductModel t_search = arrayList.get(position);
+        final ProductModel t_search = arrayList.get(position);
         holder.name.setText(arrayList.get(position).getLaptop_name());
         holder.image.setImageURI(Uri.parse(
                 "android.resource://" + context.getPackageName() +
@@ -44,7 +48,21 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.viewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent n = new Intent(context, LaptopPage.class);
+                n.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                int target_index = 0;
+                int index = 0;
+                while(index < allProducts.size())
+                {
+                    if(allProducts.get(index).getLaptop_name().equalsIgnoreCase(t_search.getLaptop_name()))
+                    {
+                        target_index = index;
+                        break;
+                    }
+                    index++;
+                }
+                n.putExtra("laptopID", target_index);
+                context.startActivity(n);
             }
         });
     }

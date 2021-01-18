@@ -1,6 +1,7 @@
 package com.example.lenovolaptopsproj.Controllers;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
@@ -23,6 +24,7 @@ public final class ProductController
     public static ProductModel getProduct(int productIndex)
     {
         return allProducts.get(productIndex);
+        Intent n_int = new Intent()
     }
 
     //  add all products to be used in the application
@@ -78,7 +80,6 @@ public final class ProductController
             };
         }
     }
-
 
     //  search list of products for items
     public static ArrayList<ProductModel> searchProducts(String searchString)

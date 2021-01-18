@@ -23,11 +23,9 @@ public class HomePage extends SearchableActivity {
     SearchView searchBtn;
 
     ImageView thinkPad;
-    ImageView yoga;
     ImageView lenovo;
     ImageView thinkBook;
-    ImageView legion;
-    ImageView ideapad;
+    ImageView IdeaPad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -51,14 +49,14 @@ public class HomePage extends SearchableActivity {
 
         thinkPad = findViewById(R.id.thinkPadlogo);
         thinkBook = findViewById(R.id.thinkBooklogo);
-        ideapad = findViewById(R.id.ideapad);
+        IdeaPad = findViewById(R.id.ideapad);
         lenovo = findViewById(R.id.lenovologo);
 
         ArrayList<View> views = new ArrayList<>();
         views.add(lenovo);
         views.add(thinkBook);
         views.add(thinkPad);
-        views.add(ideapad);
+        views.add(IdeaPad);
 
 
         for (int i = 0; i < views.size(); i++)

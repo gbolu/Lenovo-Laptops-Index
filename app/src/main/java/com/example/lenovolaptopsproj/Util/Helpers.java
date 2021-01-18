@@ -1,12 +1,7 @@
 package com.example.lenovolaptopsproj.Util;
 
-import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.AssetManager;
-import android.widget.SearchView;
-
-import com.example.lenovolaptopsproj.Pages.SearchPage;
 
 import java.io.IOException;
 import java.io.InputStream;
